@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Employee List</title>
+
+</head>
+<body>
+    <nav>
+        <a href="/employees">Home</a>
+        <a href="/employees/new">Add Employee</a>
+    </nav>
+
+    <h1>Employee List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% employees.forEach(employee => { %>
+                <tr>
+                    <td><%= employee.name %></td>
+                    <td><%= employee.designation %></td>
+                    <td><%= employee.location %></td>
+                    <td><%= employee.salary %></td>
+                    <td>
+                        <a href="/employees/<%= employee._id %>/edit">Edit</a>
+                        <form action="/employees/<%= employee._id %>?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
+

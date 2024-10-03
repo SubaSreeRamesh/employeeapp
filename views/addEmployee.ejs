@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Add Employee</title>
+</head>
+<body>
+    <nav>
+        <a href="/employees">Home</a>
+        <a href="/employees/new">Add Employee</a>
+    </nav>
+
+    <h1>Add Employee</h1>
+    <form action="/employees/addEmployee" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="designation">Designation:</label>
+        <input type="text" name="designation" required>
+
+        <label for="location">Location:</label>
+        <input type="text" name="location" required>
+
+        <label for="salary">Salary:</label>
+        <input type="number" name="salary" required>
+
+        <button type="submit">Add Employee</button>
+    </form>
+</body>
+</html>
+
+

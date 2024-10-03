@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Edit Employee</title>
+</head>
+<body>
+    <nav>
+        <a href="/employees">Home</a>
+    </nav>
+
+    <h1>Edit Employee</h1>
+    <form action="/employees/edit/<%= employee._id %>?_method=PUT" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="<%= employee.name %>" required>
+
+        <label for="designation">Designation:</label>
+        <input type="text" name="designation" value="<%= employee.designation %>" required>
+
+        <label for="location">Location:</label>
+        <input type="text" name="location" value="<%= employee.location %>" required>
+
+        <label for="salary">Salary:</label>
+        <input type="number" name="salary" value="<%= employee.salary %>" required>
+
+        <button type="submit">Update Employee</button>
+    </form>
+</body>
+</html>
+
+
